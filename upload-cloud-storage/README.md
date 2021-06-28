@@ -16,6 +16,17 @@ limitations under the License.
 
 # upload-cloud-storage
 
+## **📢 DEPRECATION NOTICE**
+
+### **GoogleCloudPlatform/github-actions/upload-cloud-storage has been deprecated. Please use google-github-actions/upload-cloud-storage**
+
+```diff
+steps:
+ - id: upload-file
+-  uses: GoogleCloudPlatform/github-actions/upload-cloud-storage@master
++  uses: google-github-actions/upload-cloud-storage@main
+```
+
 This action uploads files/folders to a [Google Cloud Storage (GCS)][gcs] bucket. This is useful when
 you want upload build artifacts from your workflow.
 
@@ -146,7 +157,7 @@ permissions to access the secrets being requested.
 You can provide credentials using the [setup-gcloud][setup-gcloud] action:
 
 ```yaml
-- uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+- uses: google-github-actions/setup-gcloud@master
   with:
     service_account_key: ${{ secrets.GCP_SA_KEY }}
     export_default_credentials: true

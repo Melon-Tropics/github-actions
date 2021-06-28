@@ -15,6 +15,17 @@ limitations under the License.
 -->
 # deploy-cloudrun
 
+## **📢 DEPRECATION NOTICE**
+
+### **GoogleCloudPlatform/github-actions/deploy-cloudrun has been deprecated. Please use google-github-actions/deploy-cloudrun**
+
+```diff
+steps:
+ - id: deploy
+-  uses: GoogleCloudPlatform/github-actions/deploy-cloudrun@master
++  uses: google-github-actions/deploy-cloudrun@main
+```
+
 This action deploys your container image to [Cloud Run][cloud-run] and makes the URL
 available to later build steps via outputs.
 
@@ -62,7 +73,7 @@ steps:
   KEY1=VALUE1,KEY2=VALUE2. **All existing environment variables will be retained**.
 
 - `metadata`: YAML serivce description for the Cloud Run service. See
-  [Metadata customizations](#metadata-customizations) for more information. 
+  [Metadata customizations](#metadata-customizations) for more information.
   **Existing configuration will be retained besides container entrypoint and arguments**.
 
 - `project_id`: (Optional) ID of the Google Cloud project. If provided, this
@@ -128,7 +139,7 @@ one of the methods found in [Configuring Ownership and access to a service accou
 You can provide credentials using the [setup-gcloud][setup-gcloud] action:
 
 ```yaml
-- uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+- uses: google-github-actions/setup-gcloud@master
   with:
     version: '290.0.1'
     service_account_key: ${{ secrets.GCP_SA_KEY }}

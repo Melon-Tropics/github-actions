@@ -16,6 +16,17 @@ limitations under the License.
 
 # get-secretmanager-secrets
 
+## **📢 DEPRECATION NOTICE**
+
+### **GoogleCloudPlatform/github-actions/get-secretmanager-secrets has been deprecated. Please use google-github-actions/get-secretmanager-secrets**
+
+```diff
+steps:
+ - id: secrets
+-  uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
++  uses: google-github-actions/get-secretmanager-secrets@main
+```
+
 This action fetches secrets from [Secret Manager][sm] and makes them available
 to later build steps via outputs. This is useful when you want Secret Manager to
 be the source of truth for secrets in your organization, but you need access to
@@ -123,7 +134,7 @@ permissions to access the secrets being requested.
 You can provide credentials using the [setup-gcloud][setup-gcloud] action:
 
 ```yaml
-- uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+- uses: google-github-actions/setup-gcloud@master
   with:
     export_default_credentials: true
 - uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master

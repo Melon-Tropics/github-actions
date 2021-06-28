@@ -13,10 +13,10 @@
 # limitations under the License.
 
 name: Set up gcloud Cloud SDK environment
-author: GoogleCloudPlatform
+author: Google LLC
 description: |-
-  Downloads, installs, and configures a gcloud Cloud SDK environment for the
-  worker. This will add the `gcloud` CLI command to the worker's $PATH.
+  Downloads, installs, and configures a Google Cloud SDK environment.
+  Adds the `gcloud` CLI command to the $PATH.
 
 inputs:
   version:
@@ -57,6 +57,15 @@ inputs:
       consume Default Application Credentials will automatically detect and use
       these credentials.
     default: false
+    required: false
+
+  credentials_file_path:
+    description: |-
+      The path and name of the file to which to write the shared default
+      credentials. This option is only valid when
+      export_default_credentials=true. By default, the credentials will be
+      written to a new file in the root of GITHUB_WORKSPACE.
+    default: null
     required: false
 
 runs:
